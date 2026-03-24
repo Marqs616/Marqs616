@@ -133,19 +133,19 @@ align-items: center;
 gap: 10px;
 padding: 12px 16px;
 border-radius: 999px;
-border: 1px solid rgba(126, 243, 255, 0.18);
+border: 1px solid rgba(156, 77, 255, 0.18);
 background:
-radial-gradient(circle at 20% 20%, rgba(126,243,255,0.18), transparent 30%),
-linear-gradient(135deg, rgba(13,17,28,0.96), rgba(8,10,18,0.96));
+radial-gradient(circle at 20% 20%, rgba(156,77,255,0.16), transparent 30%),
+linear-gradient(135deg, rgba(20,18,30,0.96), rgba(10,10,16,0.96));
 color: #eff8ff;
-box-shadow: 0 18px 44px rgba(5, 18, 36, 0.35);
+box-shadow: 0 18px 44px rgba(24, 8, 48, 0.35);
 transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .ai-launcher:hover {
 transform: translateY(-2px);
-border-color: rgba(126, 243, 255, 0.34);
-box-shadow: 0 22px 54px rgba(12, 47, 80, 0.42);
+border-color: rgba(156, 77, 255, 0.3);
+box-shadow: 0 22px 54px rgba(42, 16, 88, 0.42);
 }
 
 .ai-launcher-badge {
@@ -155,8 +155,8 @@ border-radius: 50%;
 display: inline-flex;
 align-items: center;
 justify-content: center;
-background: linear-gradient(135deg, #63f0ff, #7b8cff);
-color: #08111f;
+background: linear-gradient(135deg, #6a00ff, #9c4dff);
+color: #f4ebff;
 font-weight: 800;
 }
 
@@ -171,7 +171,7 @@ font-size: 0.95rem;
 }
 
 .ai-launcher-copy span {
-color: #9ec2d8;
+color: #c7b1ef;
 font-size: 0.72rem;
 letter-spacing: 0.08em;
 text-transform: uppercase;
@@ -495,8 +495,66 @@ left: 10px;
 max-width: none;
 }
 
+.ai-launcher {
+right: 12px;
+bottom: 74px;
+padding: 10px 12px;
+gap: 8px;
+max-width: calc(100vw - 24px);
+border-radius: 22px;
+}
+
+.ai-launcher-badge {
+width: 30px;
+height: 30px;
+font-size: 0.95rem;
+flex: 0 0 auto;
+}
+
+.ai-launcher-copy strong {
+font-size: 0.82rem;
+}
+
+.ai-launcher-copy span {
+font-size: 0.62rem;
+letter-spacing: 0.06em;
+}
+
 .mobile-menu-toggle {
 display: inline-flex;
+}
+}
+
+@media (max-width: 540px) {
+.ai-launcher {
+padding: 9px;
+border-radius: 18px;
+min-width: 0;
+}
+
+.ai-launcher-copy span {
+display: none;
+}
+
+.ai-launcher-copy strong {
+font-size: 0.78rem;
+}
+}
+
+@media (max-width: 420px) {
+.ai-launcher {
+right: 10px;
+bottom: 72px;
+padding: 8px;
+}
+
+.ai-launcher-copy {
+display: none;
+}
+
+.ai-launcher-badge {
+width: 34px;
+height: 34px;
 }
 }
 `

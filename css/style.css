@@ -5922,7 +5922,70 @@ body.ai-page .ai-hero-status.error {
 }
 
 body.ai-page .ai-composer textarea::placeholder {
-	color: #8c79b1 !important;
+color: #8c79b1 !important;
+}
+
+body:not(.home-page) .admin-hero,
+body:not(.home-page) .admin-panel-card,
+body:not(.home-page) .admin-panel-card-focus,
+body:not(.home-page) .admin-stats-redesign .stat-box {
+	background: linear-gradient(180deg, rgba(14, 12, 20, 0.98), rgba(8, 8, 14, 0.99)) !important;
+	background-image: none !important;
+	border: 1px solid rgba(255, 255, 255, 0.06) !important;
+	box-shadow:
+		inset 0 1px 0 rgba(255,255,255,0.03),
+		inset 0 0 0 1px rgba(156, 77, 255, 0.06),
+		0 22px 55px rgba(0, 0, 0, 0.36) !important;
+}
+
+body:not(.home-page) .admin-panel-card::before,
+body:not(.home-page) .admin-panel-card-focus::before,
+body:not(.home-page) .admin-hero::before,
+body:not(.home-page) .panel-card::before {
+	background: radial-gradient(circle at top right, rgba(156, 77, 255, 0.1), transparent 34%) !important;
+}
+
+body:not(.home-page) .admin-panel-card input,
+body:not(.home-page) .admin-panel-card textarea,
+body:not(.home-page) .admin-panel-card select,
+body:not(.home-page) .admin-search-form input,
+body:not(.home-page) .admin-list .empty-state,
+body:not(.home-page) .admin-mod,
+body:not(.home-page) .search-empty-state,
+body:not(.home-page) .admin-search-hint {
+	background: linear-gradient(180deg, rgba(22, 20, 30, 0.98), rgba(12, 12, 18, 0.99)) !important;
+	background-image: none !important;
+	border-color: rgba(255,255,255,0.05) !important;
+	box-shadow: none !important;
+}
+
+body:not(.home-page) .admin-panel-card .btn,
+body:not(.home-page) .admin-hero .btn {
+	background: linear-gradient(135deg, #6a00ff, #9c4dff) !important;
+	color: #f8f1ff !important;
+}
+
+body:not(.home-page) .admin-panel-card .ghost-btn,
+body:not(.home-page) .admin-hero .ghost-btn {
+	background: linear-gradient(180deg, rgba(22, 18, 32, 0.98), rgba(12, 12, 18, 0.99)) !important;
+	border-color: rgba(255,255,255,0.06) !important;
+	color: #eadbff !important;
+}
+
+body:not(.home-page) .admin-panel-card h2,
+body:not(.home-page) .admin-hero h1,
+body:not(.home-page) .admin-panel-card strong,
+body:not(.home-page) .admin-stats-redesign .stat-box span {
+	color: #f5f7fb !important;
+}
+
+body:not(.home-page) .admin-panel-card p,
+body:not(.home-page) .admin-panel-card .muted,
+body:not(.home-page) .admin-search-hint,
+body:not(.home-page) .admin-list .empty-state,
+body:not(.home-page) .admin-mod p,
+body:not(.home-page) .search-empty-state p {
+	color: #b8a8d6 !important;
 }
 
 body.ai-page .ai-message-card p,
