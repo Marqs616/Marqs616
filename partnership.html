@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parcerias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/samp.html">GTA SA</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span id="userEmail"></span>
+</div>
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/partnership.html">Parcerias</a>
+<a data-admin-link href="/admin.html" style="display:none">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<section class="hero no-bg">
+<div class="hero-content">
+<span class="hero-kicker">Area de parceiros</span>
+<h1>PARCERIAS DRXZ</h1>
+<p>Espaco para parceiros aprovados divulgarem projetos, comunidades, Discord, links e conteudos em collab.</p>
+</div>
+</section>
+
+<main class="game-shell">
+<section class="game-overview">
+<article class="spotlight-card" style="background-image:linear-gradient(180deg, rgba(10,10,16,.14), rgba(10,10,16,.88)), url('/img/girl.png')">
+<div class="spotlight-content">
+<div class="chip-row">
+<span class="chip active">Programa de parceria</span>
+<span class="chip">Conteudo colaborativo</span>
+</div>
+<h2>Parceiros com pagina propria dentro da plataforma</h2>
+<p>Os parceiros podem divulgar projetos, comunidades, Discord, YouTube e links direto daqui, com uma secao principal sempre pronta para uso.</p>
+</div>
+</article>
+
+<aside class="floating-panel">
+<div class="panel-body">
+<h3>Resumo rapido</h3>
+<div class="stat-row">
+<span class="chip"><strong id="sectionsCount">0</strong>&nbsp; secoes</span>
+<span class="chip"><strong id="postsCount">0</strong>&nbsp; posts</span>
+<span class="chip"><strong id="partnersCount">0</strong>&nbsp; parceiros ativos</span>
+</div>
+<p class="muted" style="margin-top:16px">Se sua conta tiver o cargo de parceiro, a publicacao fica liberada aqui sem depender de criar secao manualmente.</p>
+</div>
+</aside>
+</section>
+
+<section class="hub-panel">
+<div class="tabs" id="sectionTabs"></div>
+
+<div class="hub-grid">
+<div class="mods-feed" id="partnerPostsList"></div>
+
+<aside class="side-stack">
+<div class="panel-card">
+<h3>Publicar em parceria</h3>
+<p id="partnerPermissionHint" class="muted" style="margin-bottom:14px"></p>
+<form id="partnerPostForm" class="profile-edit-form">
+<select id="partnerSectionSelect" required></select>
+<input type="text" id="partnerTitle" placeholder="Titulo do conteudo" required>
+<textarea id="partnerDescription" rows="5" placeholder="Descricao, campanha ou collab" required></textarea>
+<input type="text" id="partnerDiscordUrl" placeholder="Link do Discord">
+<input type="text" id="partnerWebsiteUrl" placeholder="Site ou pagina principal">
+<input type="text" id="partnerYoutubeUrl" placeholder="Link do YouTube">
+<input type="text" id="partnerCtaLabel" placeholder="Texto do botao" value="Abrir link">
+<button class="btn" type="submit">Publicar parceria</button>
+</form>
+</div>
+<div class="panel-card">
+<h3>Como funciona</h3>
+<div class="mini-list">
+<div class="mini-item"><strong>1. Cargo</strong><p>O master admin define quem entra como parceiro.</p></div>
+<div class="mini-item"><strong>2. Secao principal</strong><p>Ja existe uma area geral pronta para parceiro usar sem travar a postagem.</p></div>
+<div class="mini-item"><strong>3. Conteudo</strong><p>O parceiro publica links, Discord e chamadas direto por aqui.</p></div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</main>
+
+<script src="/js/site-ui.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/partnership-page.js"></script>
+</body>
+</html>

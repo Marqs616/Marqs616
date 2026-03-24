@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parceria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/explore.html">Explorar</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span id="userEmail"></span>
+</div>
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/partnership.html">Parcerias</a>
+<a data-admin-link href="/admin.html" style="display:none">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<main class="partner-post-shell">
+<section class="partner-post-hero">
+<span class="hero-kicker">Parceria destacada</span>
+<h1 id="partnerPostTitle">Carregando parceria...</h1>
+<p id="partnerPostSubtitle">Separando os detalhes do conteudo colaborativo.</p>
+</section>
+
+<section class="partner-post-layout">
+<article class="partner-post-main panel-card">
+<div class="chip-row">
+<span class="chip" id="partnerPostSection">Secao</span>
+<span class="chip" id="partnerPostDate">Data</span>
+</div>
+<p id="partnerPostDescription" class="partner-post-description"></p>
+<div id="partnerPostLinks" class="partner-post-links"></div>
+</article>
+
+<aside class="partner-post-side">
+<div class="panel-card">
+<h3>Parceiro responsavel</h3>
+<a id="partnerAuthorCard" class="partner-author-card" href="#">
+<div id="partnerAuthorAvatar" class="partner-author-avatar"></div>
+<div class="partner-author-meta">
+<strong id="partnerAuthorName">Parceiro</strong>
+<span id="partnerAuthorHandle">@usuario</span>
+<div id="partnerAuthorBadges" class="chip-row"></div>
+</div>
+</a>
+</div>
+
+<div class="panel-card">
+<h3>Acoes rapidas</h3>
+<div id="partnerPostActions" class="partner-post-links"></div>
+</div>
+</aside>
+</section>
+</main>
+
+<script src="/js/site-ui.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/partner-post-page.js"></script>
+</body>
+</html>

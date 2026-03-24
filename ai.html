@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRXZ AI</title>
+<link rel="icon" type="image/png" href="/img/icone.png">
+<link rel="shortcut icon" href="/img/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20260322ai7">
+<style>
+body.ai-page,
+body.ai-page::before,
+body.ai-page::after,
+body.ai-page main,
+body.ai-page .ai-shell,
+body.ai-page .ai-layout {
+background: #05050a !important;
+background-image: none !important;
+}
+
+body.ai-page .navbar {
+background: linear-gradient(180deg, rgba(14, 11, 22, 0.98), rgba(8, 8, 14, 0.98)) !important;
+}
+
+body.ai-page .ai-hero,
+body.ai-page .ai-sidebar,
+body.ai-page .ai-chat {
+background: #0b0b12 !important;
+background-image: none !important;
+border: 1px solid rgba(255, 255, 255, 0.06) !important;
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,0.03),
+inset 0 0 0 1px rgba(156, 77, 255, 0.06),
+0 22px 55px rgba(0, 0, 0, 0.36) !important;
+}
+
+body.ai-page .ai-chat-feed,
+body.ai-page .ai-composer,
+body.ai-page .ai-message-card,
+body.ai-page .ai-message-user .ai-message-card,
+body.ai-page .ai-conversation-item,
+body.ai-page .ai-suggestion-list .quick-filter {
+background: #14141d !important;
+background-image: none !important;
+border: 1px solid rgba(255, 255, 255, 0.05) !important;
+box-shadow: none !important;
+}
+
+body.ai-page .ai-conversation-item:hover,
+body.ai-page .ai-conversation-item.active,
+body.ai-page .ai-suggestion-list .quick-filter:hover {
+background: #1a1a25 !important;
+border-color: rgba(156, 77, 255, 0.14) !important;
+}
+
+body.ai-page .ai-message-badge,
+body.ai-page .ai-message-user .ai-message-badge,
+body.ai-page .ai-sidebar .btn,
+body.ai-page .ai-chat .btn {
+background: linear-gradient(135deg, #6a00ff, #9c4dff) !important;
+color: #f8f1ff !important;
+}
+
+body.ai-page .ai-chat .ghost-btn,
+body.ai-page .ai-hero-status {
+background: #14141d !important;
+border: 1px solid rgba(255,255,255,0.06) !important;
+color: #eadbff !important;
+}
+
+body.ai-page .ai-composer textarea,
+body.ai-page .ai-message-card strong,
+body.ai-page .ai-conversation-item strong,
+body.ai-page .ai-hero h1,
+body.ai-page .ai-sidebar h2,
+body.ai-page .ai-chat h2,
+body.ai-page .ai-chat-head strong {
+color: #f5f7fb !important;
+}
+
+body.ai-page .ai-message-card p,
+body.ai-page .ai-message-card small,
+body.ai-page .ai-conversation-item span,
+body.ai-page .ai-conversation-item small,
+body.ai-page .ai-hero p,
+body.ai-page .ai-composer .muted,
+body.ai-page .ai-sidebar .muted,
+body.ai-page .ai-chat .muted {
+color: #b8a8d6 !important;
+}
+
+body.ai-page .ai-composer textarea::placeholder {
+color: #8c79b1 !important;
+}
+</style>
+</head>
+<body class="ai-page">
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/explore.html">Explorar</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/roblox.html">Roblox</a>
+<a href="/partnership.html">Parcerias</a>
+<a href="/ai.html">DRXZ AI</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span class="user-name" id="userEmail"></span>
+</div>
+
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/explore.html">Explorar mods</a>
+<a href="/ai.html">DRXZ AI</a>
+<a data-favorites-link href="/profile.html#favoritos">Favoritos</a>
+<a data-admin-link href="/admin.html" style="display:none">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<main class="ai-shell">
+<section class="ai-hero">
+<div>
+<span class="hero-kicker">Assistente oficial</span>
+<h1>DRXZ AI</h1>
+<p>Uma IA do proprio site para achar mods, explicar regras, orientar postagem e dar suporte com contexto real da plataforma.</p>
+</div>
+<div class="ai-hero-status" id="aiStatusPill">Conectando...</div>
+</section>
+
+<section class="ai-layout">
+<aside class="ai-sidebar panel-card">
+<div class="ai-sidebar-head">
+<div>
+<h2>Conversas</h2>
+<p class="muted">Seu historico fica salvo aqui.</p>
+</div>
+<button type="button" class="btn" id="newConversationButton">Nova conversa</button>
+</div>
+
+<div class="ai-suggestion-list" id="aiPromptSuggestions">
+<button type="button" class="quick-filter" data-prompt="Me ajuda a encontrar mods de Minecraft bem avaliados">Minecraft em alta</button>
+<button type="button" class="quick-filter" data-prompt="Quais regras eu preciso seguir para postar um mod no site?">Regras de postagem</button>
+<button type="button" class="quick-filter" data-prompt="Me sugere mods populares para GTA SA">Sugestoes para GTA SA</button>
+<button type="button" class="quick-filter" data-prompt="Me ajuda a escrever um titulo e descricao para meu mod">Criar descricao</button>
+</div>
+
+<div class="ai-conversation-list" id="aiConversationList"></div>
+</aside>
+
+<section class="ai-chat panel-card">
+<div class="ai-chat-head">
+<div>
+<h2 id="aiConversationTitle">Nova conversa</h2>
+<p class="muted" id="aiConversationMeta">Fale com a assistente do DRXZ MODS.</p>
+</div>
+<button type="button" class="ghost-btn" id="deleteConversationButton">Apagar conversa</button>
+</div>
+
+<div class="ai-chat-feed" id="aiChatFeed">
+<article class="ai-message ai-message-assistant">
+<div class="ai-message-badge">AI</div>
+<div class="ai-message-card">
+<strong>DRXZ AI</strong>
+<p>Me chama para encontrar mods, entender categorias, melhorar sua postagem ou tirar duvidas do site.</p>
+</div>
+</article>
+</div>
+
+<form class="ai-composer" id="aiComposer">
+<textarea id="aiComposerInput" rows="4" placeholder="Pergunte sobre mods, categorias, postagem, regras, perfil, suporte ou ideias para o seu conteudo..."></textarea>
+<div class="ai-composer-actions">
+<span class="muted" id="aiComposerHint">A IA responde com contexto do proprio DRXZ MODS.</span>
+<button type="submit" class="btn" id="aiSendButton">Enviar</button>
+</div>
+</form>
+</section>
+</section>
+</main>
+
+<script src="/js/site-ui.js?v=20260322ai7"></script>
+<script src="/js/auth.js?v=20260322ai7"></script>
+<script src="/js/ai-page.js?v=20260322ai7"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20260322a">
+</head>
+<body>
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/samp.html">GTA SA</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span id="userEmail"></span>
+</div>
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/post-mod.html">Postar mod</a>
+<a data-favorites-link href="/profile.html#favoritos">Favoritos</a>
+<a data-admin-link href="/admin.html">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<main class="admin-shell">
+<section class="admin-hero">
+<div class="admin-top">
+<div>
+<span class="hero-kicker">Central operacional</span>
+<h1>Painel administrativo</h1>
+<p class="muted">Tudo o que precisa de moderacao, suporte e decisao fica reunido aqui de forma mais direta e menos poluida.</p>
+</div>
+<div class="admin-hero-actions">
+<a href="/" class="ghost-btn">Voltar para home</a>
+<a href="/explore.html" class="ghost-btn">Explorar site</a>
+</div>
+</div>
+
+<section class="admin-stats admin-stats-redesign">
+<div class="stat-box"><span id="usersStat">0</span><p>Usuarios</p></div>
+<div class="stat-box"><span id="modsStat">0</span><p>Mods</p></div>
+<div class="stat-box"><span id="pendingStat">0</span><p>Pendentes</p></div>
+<div class="stat-box"><span id="downloadsStat">0</span><p>Downloads totais</p></div>
+<div class="stat-box"><span id="partnersStat">0</span><p>Parceiros</p></div>
+<div class="stat-box"><span id="bannedStat">0</span><p>Banidos</p></div>
+</section>
+</section>
+
+<section class="admin-grid admin-grid-primary">
+<div class="panel-card admin-panel-card admin-panel-card-focus">
+<h2>Mods aguardando aprovacao</h2>
+<p class="muted">Aqui ficam so os mods que ainda precisam passar pela analise da administracao.</p>
+<div id="modsAdminList" class="admin-list"></div>
+</div>
+
+<div class="panel-card admin-panel-card">
+<h2>Busca de usuarios</h2>
+<p class="muted">Pesquise por nome, @usuario ou parte do texto. Os usuarios so aparecem depois da busca.</p>
+<form id="adminUserSearchForm" class="admin-search-form">
+<input type="search" id="adminUserSearchInput" placeholder="Pesquisar usuarios por nome, @ ou caracteres">
+<button class="btn" type="submit">Buscar</button>
+</form>
+<div id="adminUserSearchHint" class="admin-search-hint">Digite algo para buscar usuarios da plataforma.</div>
+<div id="usersAdminList" class="admin-list"></div>
+</div>
+</section>
+
+<section class="admin-grid admin-grid-secondary">
+<div class="panel-card admin-panel-card">
+<h2>Secoes de parceria</h2>
+<form id="partnerSectionForm" class="profile-edit-form" style="margin-bottom:18px">
+<input type="text" id="partnerSectionTitle" placeholder="Titulo da secao de parceria">
+<textarea id="partnerSectionDescription" rows="3" placeholder="Descricao da secao"></textarea>
+<button class="btn" type="submit">Criar secao</button>
+</form>
+<div id="partnerSectionsList" class="admin-list"></div>
+</div>
+
+<div class="panel-card admin-panel-card">
+<h2>Posts de parceiros</h2>
+<div id="partnerPostsList" class="admin-list"></div>
+</div>
+</section>
+
+<section class="admin-grid admin-grid-tertiary">
+<div class="panel-card admin-panel-card">
+<h2>Modo manutencao</h2>
+<p class="muted">Quando ativado, apenas o master admin continua entrando no site normalmente.</p>
+<form id="maintenanceForm" class="profile-edit-form">
+<textarea id="maintenanceMessage" rows="4" placeholder="Mensagem da manutencao"></textarea>
+<div class="inline-actions">
+<button class="btn" type="button" id="enableMaintenanceButton">Ativar manutencao</button>
+<button class="ghost-btn" type="button" id="disableMaintenanceButton">Desativar manutencao</button>
+</div>
+</form>
+<div id="maintenanceStatus" class="empty-state" style="margin-top:16px"></div>
+</div>
+
+<div class="panel-card admin-panel-card">
+<h2>Aviso global</h2>
+<p class="muted">Somente o master admin pode enviar uma notificacao para toda a comunidade.</p>
+<form id="broadcastForm" class="profile-edit-form">
+<input type="text" id="broadcastTitle" placeholder="Titulo da notificacao">
+<textarea id="broadcastMessage" rows="4" placeholder="Mensagem para todos"></textarea>
+<input type="text" id="broadcastLink" placeholder="Link para abrir ao clicar" value="/">
+<button class="btn" type="submit">Enviar para todos</button>
+</form>
+<div class="empty-state" style="margin-top:16px">A plataforma tambem envia um aviso automatico sobre o site a cada 2 horas.</div>
+</div>
+</section>
+</main>
+
+<script src="/js/site-ui.js?v=20260322a"></script>
+<script src="/js/auth.js?v=20260322a"></script>
+<script src="/js/admin-panel.js?v=20260322a"></script>
+</body>
+</html>

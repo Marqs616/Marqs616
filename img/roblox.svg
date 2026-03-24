@@ -1,0 +1,22 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="700" rx="40" fill="url(#bg)"/>
+<circle cx="1020" cy="110" r="130" fill="url(#glow)" fill-opacity="0.7"/>
+<circle cx="150" cy="620" r="180" fill="#00D1FF" fill-opacity="0.12"/>
+<rect x="182" y="140" width="340" height="340" rx="38" transform="rotate(-12 182 140)" fill="#F7FBFF" fill-opacity="0.92"/>
+<rect x="314" y="274" width="76" height="76" rx="10" transform="rotate(-12 314 274)" fill="#0E1533"/>
+<path d="M694 184C754 122 857 123 920 184C983 245 983 347 920 410C857 473 754 474 694 410C635 348 634 246 694 184Z" fill="#0D1739" fill-opacity="0.72" stroke="#53E7FF" stroke-opacity="0.5" stroke-width="2"/>
+<path d="M751 245H868C885 245 899 259 899 276V282C899 299 885 313 868 313H751C734 313 720 299 720 282V276C720 259 734 245 751 245Z" fill="#53E7FF" fill-opacity="0.16"/>
+<path d="M751 338H843C860 338 874 352 874 369V375C874 392 860 406 843 406H751C734 406 720 392 720 375V369C720 352 734 338 751 338Z" fill="#53E7FF" fill-opacity="0.16"/>
+<text x="90" y="590" fill="#EAFBFF" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="700">ROBLOX</text>
+<text x="92" y="640" fill="#91EFFF" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600">Scripts, executores, anti lag e utilitarios</text>
+<defs>
+<linearGradient id="bg" x1="95" y1="58" x2="1087" y2="696" gradientUnits="userSpaceOnUse">
+<stop stop-color="#07111F"/>
+<stop offset="1" stop-color="#101B33"/>
+</linearGradient>
+<radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1020 110) rotate(90) scale(130)">
+<stop stop-color="#4BF0FF"/>
+<stop offset="1" stop-color="#4BF0FF" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

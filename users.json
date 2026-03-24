@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "username": "drax",
+    "email": "marcospau...@gmail.com",
+    "password": "$2a$10$HdJm1yVuEoFWqPz1O95Ezu/d5f/lLQQUHVW8CpscpU2oFHzBQ6bp2",
+    "oauthAccounts": [],
+    "role": "master_admin",
+    "canPost": true,
+    "banned": false,
+    "banReason": "",
+    "banDate": null,
+    "recoveryAuthorized": false,
+    "recoveryRequestedAt": null,
+    "recoveryExpiresAt": null,
+    "recoveryToken": "",
+    "security": {
+      "registeredIp": "::1",
+      "trustedIps": [
+        "::1"
+      ],
+      "trustedDevices": [
+        "8b903e9b-372d-44d1-8d6a-c3aeb6669f7b"
+      ],
+      "securityBypassUntil": null,
+      "lastLoginIp": "::1",
+      "lastLoginAt": "2026-03-24T00:23:53.713Z",
+      "lastDeviceToken": "8b903e9b-372d-44d1-8d6a-c3aeb6669f7b"
+    },
+    "badges": {
+      "verified": false,
+      "booster": false,
+      "ownerTag": true,
+      "adminTag": false
+    },
+    "profile": {
+      "displayName": "drax",
+      "bio": "nobru",
+      "accentColor": "#7300ff",
+      "avatarUrl": "/uploads/1773711161136-443293.jpg",
+      "coverUrl": "/uploads/1773711161139-761856.jpg",
+      "discord": "https://discord.gg/QVCWupZZ",
+      "youtube": "https://www.youtube.com/@Laglegalforever666",
+      "instagram": "",
+      "github": "",
+      "location": "salvafds"
+    }
+  },
+  {
+    "id": 2,
+    "username": "roberto",
+    "email": "seusilva@gmail.com",
+    "password": "$2a$10$MiXN2CnesTte6pFhVtP53ex6Mr3mhafnhspDhCH9El8RRL/AYcp62",
+    "oauthAccounts": [],
+    "role": "user",
+    "canPost": false,
+    "banned": false,
+    "banReason": "",
+    "banDate": null,
+    "recoveryAuthorized": false,
+    "recoveryRequestedAt": null,
+    "recoveryExpiresAt": null,
+    "recoveryToken": "",
+    "security": {
+      "registeredIp": "",
+      "trustedIps": [],
+      "trustedDevices": [],
+      "securityBypassUntil": null,
+      "lastLoginIp": "",
+      "lastLoginAt": null,
+      "lastDeviceToken": ""
+    },
+    "badges": {
+      "verified": false,
+      "booster": true,
+      "ownerTag": false,
+      "adminTag": false
+    },
+    "profile": {
+      "displayName": "roberto",
+      "bio": "",
+      "accentColor": "#9c4dff",
+      "avatarUrl": "",
+      "coverUrl": "",
+      "discord": "",
+      "youtube": "",
+      "instagram": "",
+      "github": "",
+      "location": ""
+    }
+  },
+  {
+    "id": 3,
+    "username": "pedro",
+    "email": "carlinhosmaia121134@gmail.com",
+    "password": "$2a$10$lRmZcB.tB8.d7VHpWXf0f.MegSUpvPHq2PlnFw5impJkuf5lJcepa",
+    "oauthAccounts": [],
+    "role": "admin",
+    "canPost": true,
+    "banned": false,
+    "banReason": "",
+    "banDate": null,
+    "recoveryAuthorized": false,
+    "recoveryRequestedAt": null,
+    "recoveryExpiresAt": null,
+    "recoveryToken": "",
+    "security": {
+      "registeredIp": "::1",
+      "trustedIps": [
+        "::1"
+      ],
+      "trustedDevices": [
+        "8b903e9b-372d-44d1-8d6a-c3aeb6669f7b"
+      ],
+      "securityBypassUntil": null,
+      "lastLoginIp": "::1",
+      "lastLoginAt": "2026-03-20T00:38:18.525Z",
+      "lastDeviceToken": "8b903e9b-372d-44d1-8d6a-c3aeb6669f7b"
+    },
+    "badges": {
+      "verified": true,
+      "booster": false,
+      "ownerTag": false,
+      "adminTag": true
+    },
+    "profile": {
+      "displayName": "pedro",
+      "bio": "",
+      "accentColor": "#9c4dff",
+      "avatarUrl": "",
+      "coverUrl": "",
+      "discord": "",
+      "youtube": "",
+      "instagram": "",
+      "github": "",
+      "location": ""
+    }
+  },
+  {
+    "id": 4,
+    "username": "skylinefacildehackear",
+    "email": "hackergringobasedredpill@skype.com.br",
+    "password": "$2a$10$OFJUHR01d7gizx72kKXdiOpXtiT0.3wVxrvUfgJ9XqG91EkZ0DbXq",
+    "oauthAccounts": [],
+    "role": "partner",
+    "canPost": false,
+    "banned": false,
+    "banReason": "",
+    "banDate": null,
+    "recoveryAuthorized": false,
+    "recoveryRequestedAt": null,
+    "recoveryExpiresAt": null,
+    "recoveryToken": "",
+    "security": {
+      "registeredIp": "",
+      "trustedIps": [],
+      "trustedDevices": [],
+      "securityBypassUntil": null,
+      "lastLoginIp": "",
+      "lastLoginAt": null,
+      "lastDeviceToken": ""
+    },
+    "badges": {
+      "verified": false,
+      "booster": false,
+      "ownerTag": false,
+      "adminTag": false
+    },
+    "profile": {
+      "displayName": "skylinefacildehackear",
+      "bio": "",
+      "accentColor": "#9c4dff",
+      "avatarUrl": "",
+      "coverUrl": "",
+      "discord": "",
+      "youtube": "",
+      "instagram": "",
+      "github": "",
+      "location": ""
+    }
+  }
+]

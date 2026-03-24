@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acesso negado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<main class="security-denied-shell">
+<section class="security-denied-card">
+<div class="security-denied-grid">
+<div class="security-denied-copy">
+<div class="security-denied-kicker">Escudo de seguranca</div>
+<h1>Acesso bloqueado por protecao de conta</h1>
+<p id="securityDeniedMessage" class="muted">O IP ou dispositivo desta tentativa nao bate com o que foi cadastrado na conta. Isso ajuda a impedir roubo de conta.</p>
+<div class="security-denied-badges">
+<span class="security-badge danger">IP divergente</span>
+<span class="security-badge">Dispositivo nao reconhecido</span>
+<span class="security-badge success">Conta protegida</span>
+</div>
+<div class="security-denied-orbs" aria-hidden="true">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="security-denied-actions">
+<a class="btn" href="https://discord.gg/QVCWupZZ" target="_blank" rel="noreferrer">Contatar suporte no Discord</a>
+<a class="ghost-btn" href="/login.html">Voltar para login</a>
+</div>
+<div class="security-denied-note">
+<strong>Como funciona:</strong>
+<p>Um master admin precisa confirmar sua identidade em call e liberar temporariamente o novo dispositivo ou a troca de senha.</p>
+</div>
+</div>
+<aside class="security-denied-visual" aria-hidden="true">
+<div class="security-core">
+<div class="security-core-ring ring-one"></div>
+<div class="security-core-ring ring-two"></div>
+<div class="security-core-center">
+<span class="security-core-icon">!</span>
+<small>verificacao</small>
+</div>
+</div>
+<div class="security-scanline"></div>
+</aside>
+</div>
+</section>
+</main>
+
+<script>
+const params = new URLSearchParams(window.location.search)
+const username = params.get("username")
+if (username) {
+  const message = document.getElementById("securityDeniedMessage")
+  if (message) {
+    message.textContent = `A tentativa de acesso da conta @${username} foi bloqueada porque o IP ou dispositivo nao bate com o cadastrado. Isso ajuda a impedir roubo de conta.`
+  }
+}
+</script>
+<script src="/js/site-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRXZ MODS</title>
+<link rel="icon" type="image/png" href="/img/icone.png">
+<link rel="shortcut icon" href="/img/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="home-page">
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">
+<span class="logo-mark" aria-hidden="true"></span>
+<span class="logo-wordmark">DRXZ MODS</span>
+</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/explore.html">Explorar</a>
+<a href="/samp.html">GTA SA</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/roblox.html">Roblox</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-search">
+<input type="text" placeholder="Buscar mods, autores e jogos" id="searchTop">
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span class="user-name" id="userEmail"></span>
+</div>
+
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/explore.html">Explorar mods</a>
+<a data-favorites-link href="/profile.html#favoritos">Favoritos</a>
+<a data-admin-link href="/admin.html" style="display:none">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<main class="home-shell">
+<section class="hero hero-redesign">
+<div class="hero-content hero-content-redesign">
+<div class="hero-banner-overlay"></div>
+<div class="hero-copy">
+<h1><span>DRXZ</span> <span>MODS</span></h1>
+<p>Descubra mods, acompanhe criadores e explore a comunidade com uma navegação mais limpa.</p>
+<div class="hero-actions">
+<a href="/explore.html" class="btn">Explorar mods</a>
+<a href="/post-mod.html" class="ghost-btn">Postar mod</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="popular-section home-section">
+<div class="explore-header">
+<div>
+<h2>Mods em destaque</h2>
+<p class="section-subtitle">Os projetos com melhor resposta da comunidade aparecem aqui primeiro, com visual mais enxuto e leitura mais rapida.</p>
+</div>
+</div>
+<div id="featured-mods" class="games games-featured"></div>
+</section>
+
+<section class="category-section home-section">
+<div class="explore-header">
+<div>
+<h2 class="section-title">Categorias</h2>
+<p class="section-subtitle">Cada area agora funciona como uma porta direta para jogos, trends e postagem guiada.</p>
+</div>
+</div>
+<div class="category-grid">
+<a href="/samp.html" class="category-card">
+<img src="/img/samp.png" alt="GTA SA">
+<div class="category-overlay">
+<h3>GTA SA</h3>
+<p>Mods aprovados para SA-MP, MTA e todo o universo San Andreas.</p>
+</div>
+</a>
+
+<a href="/minecraft.html" class="category-card">
+<img src="/img/minezin.png" alt="Minecraft">
+<div class="category-overlay">
+<h3>Minecraft</h3>
+<p>Pacotes recentes, criadores em destaque e mods em alta.</p>
+</div>
+</a>
+
+<a href="/roblox.html" class="category-card">
+<img src="/img/roblox.svg" alt="Roblox">
+<div class="category-overlay">
+<h3>Roblox</h3>
+<p>Scripts, executores, anti lag, utilidades e conteudo para varios games da plataforma.</p>
+</div>
+</a>
+
+<a href="/fnf.html" class="category-card">
+<img src="/img/fnf.svg" alt="Friday Night Funkin">
+<div class="category-overlay">
+<h3>Friday Night Funkin</h3>
+<p>Weeks, skins, charts, packs visuais e mods para a comunidade FNF.</p>
+</div>
+</a>
+
+<a href="/gtav.html" class="category-card">
+<img src="/img/gtav.svg" alt="GTA V">
+<div class="category-overlay">
+<h3>GTA V</h3>
+<p>Conteudo para FiveM e GTA V normal, com packs, scripts, mapas e recursos visuais.</p>
+</div>
+</a>
+</div>
+</section>
+
+<section class="recent-section home-section">
+<div class="explore-header">
+<div>
+<h2>Explorar mods</h2>
+<p class="section-subtitle">Uma busca central para navegar por tudo sem se perder entre paginas e blocos demais.</p>
+</div>
+<a href="/explore.html" class="ghost-btn">Abrir aba completa</a>
+</div>
+<div class="explore-toolbar">
+<input type="text" id="searchMods" placeholder="Filtrar por nome, descricao, autor ou jogo" class="search-bar">
+<select id="homeSort">
+<option value="recent">Mais recentes</option>
+<option value="popular">Mais baixados</option>
+<option value="rating">Melhor avaliados</option>
+</select>
+</div>
+<div id="recent-mods" class="games"></div>
+</section>
+</main>
+
+<footer class="footer-redesign">
+<div>
+<strong>DRXZ MODS</strong>
+<p>Exploracao, criadores, aprovacao e comunidade em um fluxo mais limpo.</p>
+</div>
+<div class="footer-links">
+<a href="/explore.html">Explorar</a>
+<a href="/post-mod.html">Postar mod</a>
+<a href="/partnership.html">Parcerias</a>
+</div>
+</footer>
+
+<script src="/js/site-ui.js"></script>
+<script src="/js/home-mods.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

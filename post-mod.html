@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postar mod</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/explore.html">Explorar</a>
+<a href="/samp.html">GTA SA</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/roblox.html">Roblox</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span id="userEmail"></span>
+</div>
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/post-mod.html">Postar mod</a>
+<a data-favorites-link href="/profile.html#favoritos">Favoritos</a>
+<a data-admin-link href="/admin.html" style="display:none">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<main class="post-mod-shell">
+<section class="post-mod-hero">
+<span class="hero-kicker">Envio centralizado</span>
+<h1>Poste seu mod em uma tela focada</h1>
+<p>Escolha o jogo, monte a descricao e envie tudo para analise em um fluxo mais limpo e profissional.</p>
+</section>
+
+<section class="post-mod-layout">
+<article class="panel-card post-mod-panel">
+<div class="simple-section-head">
+<div>
+<h2>Novo envio</h2>
+<p id="postModPermissionHint" class="muted">Verificando a permissao da sua conta...</p>
+</div>
+</div>
+
+<form id="postModForm" class="profile-edit-form" enctype="multipart/form-data">
+<select id="postModGame" name="game" required>
+<option value="gtasa">GTA SA</option>
+<option value="minecraft">Minecraft</option>
+<option value="roblox">Roblox</option>
+<option value="fnf">Friday Night Funkin</option>
+<option value="gtav">GTA V / FiveM</option>
+</select>
+<input type="text" id="postModTitle" name="title" placeholder="Titulo do mod" required>
+<textarea id="postModDescription" name="description" rows="6" placeholder="Descreva o mod, diga o que muda, a compatibilidade e o que vale destacar." required></textarea>
+<input type="text" id="postModCredits" name="credits" placeholder="Creditos, equipe, links uteis ou observacoes">
+
+<label class="upload-dropzone">
+<strong>Arquivo principal</strong>
+<p id="postModFileName">Nenhum arquivo selecionado</p>
+<input type="file" id="postModFile" name="file" required>
+</label>
+
+<label class="upload-dropzone">
+<strong>Banner do mod</strong>
+<p id="postModBannerName">Nenhum banner selecionado</p>
+<input type="file" id="postModBanner" name="banner">
+</label>
+
+<button class="btn" id="postModSubmit" type="submit">Enviar para analise</button>
+</form>
+</article>
+
+<aside class="side-stack">
+<div class="panel-card">
+<h3>Como funciona</h3>
+<div class="mini-list">
+<div class="mini-item"><strong>1. Envio</strong><p>Voce escolhe o jogo e envia o pacote com banner e descricao.</p></div>
+<div class="mini-item"><strong>2. Analise</strong><p>Mods enviados por postadores entram em aprovacao e podem levar de 1h a 24h.</p></div>
+<div class="mini-item"><strong>3. Liberacao</strong><p>Depois de aprovado, o mod aparece nas areas do jogo e na aba de explorar.</p></div>
+</div>
+</div>
+
+<div class="panel-card">
+<h3>Dicas para aprovar mais rapido</h3>
+<div class="mini-list">
+<div class="mini-item"><strong>Titulo claro</strong><p>Evite nome generico. Diga o que realmente foi feito.</p></div>
+<div class="mini-item"><strong>Descricao forte</strong><p>Mostre compatibilidade, efeitos e pontos principais do mod.</p></div>
+<div class="mini-item"><strong>Banner bom</strong><p>Um visual limpo aumenta clique e facilita avaliacao.</p></div>
+</div>
+</div>
+</aside>
+</section>
+</main>
+
+<script src="/js/site-ui.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/post-mod-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "sectionId": 1,
+    "userId": 1,
+    "title": "meu ovo",
+    "description": "ovo",
+    "discordUrl": "",
+    "websiteUrl": "",
+    "youtubeUrl": "",
+    "ctaLabel": "Abrir link",
+    "approved": true,
+    "created_at": "2026-03-17T15:29:14.194Z"
+  }
+]

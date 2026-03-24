@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="profile-page">
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/samp.html">GTA SA</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span id="userEmail"></span>
+</div>
+
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/post-mod.html">Postar mod</a>
+<a data-favorites-link href="/profile.html#favoritos">Favoritos</a>
+<a data-admin-link href="/admin.html" style="display:none">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<main class="profile-container">
+<section class="profile-hero">
+<div class="profile-cover" id="profileCover"></div>
+<div class="profile-hero-content">
+<div class="profile-avatar" id="profileAvatar"></div>
+
+<div class="profile-meta">
+<h1 id="username">Perfil</h1>
+<p id="profileTagline" class="muted">Carregando perfil...</p>
+<p id="profileBio" class="profile-bio"></p>
+<div class="chip-row">
+<span class="chip" id="profileRoleChip">Usuario</span>
+<span id="profileBadgeRow" class="chip-row"></span>
+<span class="chip" id="profileLocationChip" style="display:none"></span>
+</div>
+<div id="profileSocialLinks" class="profile-social-links"></div>
+</div>
+
+<div class="profile-actions">
+<button id="followButton" class="btn" style="display:none">Seguir</button>
+<button id="editProfileButton" class="ghost-btn" style="display:none">Personalizar perfil</button>
+</div>
+</div>
+</section>
+
+<section class="profile-stats">
+<div class="stat-box"><span id="mods-count">0</span><p>Mods enviados</p></div>
+<div class="stat-box"><span id="downloads-count">0</span><p>Downloads</p></div>
+<div class="stat-box"><span id="rating-count">0</span><p>Media das avaliacoes</p></div>
+<div class="stat-box"><span id="followers-count">0</span><p>Seguidores</p></div>
+<div class="stat-box"><span id="following-count">0</span><p>Seguindo</p></div>
+<div class="stat-box"><span id="favorites-count">0</span><p>Favoritos</p></div>
+</section>
+
+<section class="profile-grid">
+<div class="profile-section">
+<div class="panel-card">
+<h2 class="profile-title">Mods publicados</h2>
+<div id="mods" class="games"></div>
+</div>
+
+<div class="panel-card" id="favoritos">
+<h2 class="profile-title">Favoritos</h2>
+<div id="favoritesPreview" class="games"></div>
+</div>
+</div>
+
+<aside class="side-section">
+<div class="profile-edit-card" id="profileEditCard" style="display:none">
+<h2 class="profile-title">Personalizar perfil</h2>
+<form id="profileEditForm" class="profile-edit-form">
+<input type="text" id="displayName" placeholder="Nome de exibicao">
+<textarea id="bio" rows="4" placeholder="Sua bio"></textarea>
+<input type="text" id="location" placeholder="Localizacao">
+<input type="text" id="discord" placeholder="Link do Discord">
+<input type="text" id="youtube" placeholder="Link do YouTube">
+<input type="text" id="instagram" placeholder="Link do Instagram">
+<input type="text" id="github" placeholder="Link do GitHub">
+<div class="profile-upload-grid">
+<label class="upload-dropzone">
+<strong>Foto de perfil</strong>
+<p id="avatarUploadName">Nenhum arquivo selecionado</p>
+<input type="file" id="avatarFile" accept="image/*">
+</label>
+<label class="upload-dropzone">
+<strong>Banner do perfil</strong>
+<p id="coverUploadName">Nenhum arquivo selecionado</p>
+<input type="file" id="coverFile" accept="image/*">
+</label>
+</div>
+<div class="profile-upload-grid">
+<div class="panel-card upload-preview-card">
+<p class="muted">Preview da foto</p>
+<div id="avatarPreview" class="upload-preview avatar-preview"></div>
+</div>
+<div class="panel-card upload-preview-card">
+<p class="muted">Preview do banner</p>
+<div id="coverPreview" class="upload-preview cover-preview"></div>
+</div>
+</div>
+<input type="color" id="accentColor" value="#9c4dff">
+<button class="btn" type="submit">Salvar perfil</button>
+</form>
+</div>
+
+<div class="panel-card">
+<h2 class="profile-title">Seguidores</h2>
+<div id="followersList" class="admin-list"></div>
+</div>
+
+<div class="panel-card">
+<h2 class="profile-title">Seguindo</h2>
+<div id="followingList" class="admin-list"></div>
+</div>
+</aside>
+</section>
+</main>
+
+<script src="/js/site-ui.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/profile-page.js"></script>
+</body>
+</html>

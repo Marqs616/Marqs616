@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "modId": "1",
+    "userId": 3,
+    "username": "pedro",
+    "text": "brabo",
+    "date": "2026-03-19T01:16:56.429Z",
+    "parentId": null,
+    "likes": [],
+    "dislikes": []
+  },
+  {
+    "id": 2,
+    "modId": "1",
+    "userId": 1,
+    "username": "drax",
+    "text": "nice",
+    "date": "2026-03-19T01:17:17.027Z",
+    "parentId": "1",
+    "likes": [],
+    "dislikes": []
+  }
+]

@@ -1,0 +1,27 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="700" rx="40" fill="url(#bg)"/>
+<circle cx="1038" cy="105" r="128" fill="url(#glowPink)" fill-opacity="0.65"/>
+<circle cx="916" cy="208" r="110" fill="url(#glowBlue)" fill-opacity="0.45"/>
+<rect x="136" y="176" width="392" height="286" rx="34" fill="#101325" fill-opacity="0.92" stroke="#FF4DB8" stroke-opacity="0.35" stroke-width="2"/>
+<path d="M216 374C216 332 250 298 292 298H340V258L424 338L340 418V378H292C272 378 256 394 256 414V442H216V374Z" fill="#FF4DB8"/>
+<path d="M880 300C920 300 952 332 952 372V442H912V372C912 352 896 336 876 336H830V376L746 296L830 216V256H880V300Z" fill="#45D8FF"/>
+<circle cx="639" cy="347" r="108" fill="#FF4DB8" fill-opacity="0.15"/>
+<circle cx="639" cy="347" r="70" fill="#45D8FF" fill-opacity="0.18"/>
+<circle cx="639" cy="347" r="24" fill="#F8FBFF"/>
+<text x="88" y="592" fill="#FFF1FA" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700">FRIDAY NIGHT FUNKIN</text>
+<text x="92" y="640" fill="#FFB9E4" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600">Weeks, charts, skins e packs visuais</text>
+<defs>
+<linearGradient id="bg" x1="92" y1="76" x2="1104" y2="690" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0E0816"/>
+<stop offset="1" stop-color="#171225"/>
+</linearGradient>
+<radialGradient id="glowPink" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1038 105) rotate(90) scale(128)">
+<stop stop-color="#FF4DB8"/>
+<stop offset="1" stop-color="#FF4DB8" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="glowBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(916 208) rotate(90) scale(110)">
+<stop stop-color="#45D8FF"/>
+<stop offset="1" stop-color="#45D8FF" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

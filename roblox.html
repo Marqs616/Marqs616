@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area Roblox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="game-theme-roblox">
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/explore.html">Explorar</a>
+<a href="/samp.html">GTA SA</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/roblox.html">Roblox</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none">
+<div class="user-trigger">
+<span>Logado como</span>
+<span id="userEmail"></span>
+</div>
+</div>
+</header>
+
+<section class="hero no-bg">
+<div class="hero-content">
+<span class="hero-kicker">Roblox</span>
+<h1>Roblox</h1>
+<p>Explore scripts, executores, anti lags e utilidades para varias experiencias da plataforma.</p>
+</div>
+</section>
+
+<main class="game-shell simple-game-shell">
+<section class="hub-panel simple-hero-panel">
+<div class="simple-hero-content">
+<div>
+<p class="muted">Destaque da semana</p>
+<h2 id="featuredTitle">Carregando destaque...</h2>
+<p id="featuredText">Separando primeiro o que a comunidade mais abriu, salvou e comentou para agilizar sua busca.</p>
+<div class="spotlight-actions">
+<a id="featuredButton" href="#" class="btn">Abrir destaque</a>
+</div>
+</div>
+<div class="simple-stats-grid">
+<div class="mini-stat"><strong id="modsCount">0</strong><span>mods</span></div>
+<div class="mini-stat"><strong id="downloadsCount">0</strong><span>downloads</span></div>
+<div class="mini-stat"><strong id="creatorsCount">0</strong><span>criadores</span></div>
+</div>
+</div>
+</section>
+
+<section class="hub-panel simple-section">
+<div class="simple-section-head">
+<div>
+<h2>Explorar mods</h2>
+<p class="muted">Pesquise scripts, melhorias de desempenho, packs utilitarios e conteudo feito para jogos da plataforma.</p>
+</div>
+</div>
+
+<div class="simple-toolbar">
+<input id="gameSearch" class="search-bar" placeholder="Buscar por script, executor, anti lag ou autor">
+<select id="sortSelect">
+<option value="recent">Mais recentes</option>
+<option value="popular">Mais baixados</option>
+<option value="rating">Melhor avaliados</option>
+</select>
+</div>
+
+<div class="quick-filters simple-filters">
+<button class="quick-filter active" data-filter="all">Tudo</button>
+<button class="quick-filter" data-filter="popular">Em alta</button>
+<button class="quick-filter" data-filter="rated">Bem avaliados</button>
+<button class="quick-filter" data-filter="recent">Novidades</button>
+</div>
+
+<div class="simple-content-grid">
+<div class="mods-feed" id="modsFeed"></div>
+
+<aside class="side-stack">
+<div class="panel-card">
+<h3>Top downloads</h3>
+<div id="topList" class="mini-list"></div>
+</div>
+
+<div class="panel-card">
+<h3>Recem-chegados</h3>
+<div id="recentList" class="mini-list"></div>
+</div>
+</aside>
+</div>
+</section>
+
+<section class="hub-panel simple-section" id="publishSection">
+<div class="simple-section-head">
+<div>
+<h2>Tela de postagem</h2>
+<p id="postPermissionHint" class="muted"></p>
+</div>
+</div>
+
+<div class="simple-content-grid">
+<div class="profile-edit-card">
+<div class="mini-list">
+<div class="mini-item"><strong>Postagem centralizada</strong><p>Agora o envio de mods acontece em uma pagina dedicada, mais limpa e mais organizada.</p></div>
+<div class="mini-item"><strong>Jogo ja selecionado</strong><p>Ao abrir a tela, Roblox ja entra marcado para agilizar seu envio.</p></div>
+</div>
+<div class="spotlight-actions" style="margin-top:18px">
+<a class="btn" href="/post-mod.html?game=roblox">Ir para tela de postagem</a>
+</div>
+</div>
+
+<aside class="side-stack">
+<div class="panel-card">
+<h3>Dicas rapidas</h3>
+<div class="mini-list">
+<div class="mini-item"><strong>Diga o alvo</strong><p>Explique para qual experiencia ou categoria o conteudo foi feito.</p></div>
+<div class="mini-item"><strong>Seja transparente</strong><p>Descreva dependencias, limites e modo de uso.</p></div>
+<div class="mini-item"><strong>Capriche na capa</strong><p>Um banner forte ajuda muito o clique e a aprovacao.</p></div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</main>
+
+<footer>
+<p>Conteudo Roblox organizado em um hub mais limpo, forte e facil de navegar.</p>
+</footer>
+
+<script src="/js/site-ui.js"></script>
+<script src="/js/game-hub.js"></script>
+<script>
+createGameHub({
+title: "Roblox",
+gameKey: "roblox",
+categoryLabel: "Roblox",
+fallbackImage: "/img/roblox.svg"
+})
+</script>
+</body>
+</html>

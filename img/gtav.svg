@@ -1,0 +1,24 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="700" rx="40" fill="url(#bg)"/>
+<circle cx="1032" cy="110" r="128" fill="url(#glow)" fill-opacity="0.64"/>
+<path d="M186 454C186 335 282 238 401 238H532C651 238 748 335 748 454V468H186V454Z" fill="#0B1F1B" fill-opacity="0.9" stroke="#6AFFF0" stroke-opacity="0.26" stroke-width="2"/>
+<path d="M256 454C256 373 321 308 402 308H530C611 308 676 373 676 454V468H256V454Z" fill="#102E27"/>
+<circle cx="304" cy="476" r="48" fill="#152B27"/>
+<circle cx="630" cy="476" r="48" fill="#152B27"/>
+<circle cx="304" cy="476" r="22" fill="#DEFFF9"/>
+<circle cx="630" cy="476" r="22" fill="#DEFFF9"/>
+<rect x="796" y="204" width="240" height="232" rx="34" fill="#0E1D1A" fill-opacity="0.88" stroke="#6AFFF0" stroke-opacity="0.32" stroke-width="2"/>
+<path d="M865 276L913 232H967L919 276H995V320H919V404H865V320H789V276H865Z" fill="#6AFFF0"/>
+<text x="84" y="594" fill="#F0FFF9" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700">GTA V</text>
+<text x="90" y="640" fill="#A7FFF3" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600">Mods, recursos FiveM, carros, mapas e visual packs</text>
+<defs>
+<linearGradient id="bg" x1="96" y1="66" x2="1084" y2="694" gradientUnits="userSpaceOnUse">
+<stop stop-color="#07110F"/>
+<stop offset="1" stop-color="#0D1816"/>
+</linearGradient>
+<radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1032 110) rotate(90) scale(128)">
+<stop stop-color="#74FFF1"/>
+<stop offset="1" stop-color="#74FFF1" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

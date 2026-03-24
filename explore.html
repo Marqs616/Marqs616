@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorar Mods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/explore.html">Explorar</a>
+<a href="/samp.html">GTA SA</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/roblox.html">Roblox</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span class="user-name" id="userEmail"></span>
+</div>
+
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/explore.html">Explorar mods</a>
+<a data-favorites-link href="/profile.html#favoritos">Favoritos</a>
+<a data-admin-link href="/admin.html" style="display:none">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<section class="hero no-bg">
+<div class="hero-content">
+<span class="hero-kicker">Busca geral</span>
+<h1>Explorar mods</h1>
+<p>Uma aba unica para encontrar mods, criadores e perfis em um so lugar.</p>
+</div>
+</section>
+
+<main class="page-container explore-page">
+<section class="hub-panel simple-section">
+<div class="simple-section-head">
+<div>
+<h2>Pesquisa completa</h2>
+<p class="muted">Pesquise por nome do mod, caracteristicas, jogo, criador, perfil, bio e mais.</p>
+</div>
+</div>
+
+<div class="explore-toolbar explore-page-toolbar">
+<input id="exploreSearch" class="search-bar" placeholder="Buscar mods, perfis, criadores, caracteristicas e jogos">
+<select id="exploreType">
+<option value="all">Tudo</option>
+<option value="mods">So mods</option>
+<option value="profiles">So perfis</option>
+</select>
+<select id="exploreGame">
+<option value="all">Todos os jogos</option>
+<option value="gtasa">GTA SA</option>
+<option value="minecraft">Minecraft</option>
+<option value="roblox">Roblox</option>
+<option value="fnf">Friday Night Funkin</option>
+<option value="gtav">GTA V</option>
+</select>
+<select id="exploreSort">
+<option value="recent">Mais recentes</option>
+<option value="popular">Mais baixados</option>
+<option value="rating">Melhor avaliados</option>
+</select>
+</div>
+
+<div class="quick-filters simple-filters">
+<button class="quick-filter active" data-type-filter="all">Tudo</button>
+<button class="quick-filter" data-type-filter="mods">Mods</button>
+<button class="quick-filter" data-type-filter="profiles">Perfis</button>
+</div>
+
+<div class="explore-summary" id="exploreSummary">
+<div class="mini-stat"><strong id="modsResultCount">0</strong><span>mods encontrados</span></div>
+<div class="mini-stat"><strong id="profilesResultCount">0</strong><span>perfis encontrados</span></div>
+<div class="mini-stat"><strong id="totalResultCount">0</strong><span>resultados no total</span></div>
+</div>
+</section>
+
+<section class="explore-results-grid">
+<div class="hub-panel simple-section">
+<div class="simple-section-head">
+<div>
+<h2>Mods</h2>
+<p class="muted">Todos os mods aprovados entram aqui, independente do jogo.</p>
+</div>
+</div>
+<div id="exploreMods" class="mods-feed"></div>
+</div>
+
+<div class="hub-panel simple-section">
+<div class="simple-section-head">
+<div>
+<h2>Perfis</h2>
+<p class="muted">Pesquise criadores, parceiros, administradores e usuarios do site.</p>
+</div>
+</div>
+<div id="exploreProfiles" class="profile-list"></div>
+</div>
+</section>
+</main>
+
+<footer>
+<p>Explore tudo do site em uma unica busca, com mods e perfis lado a lado.</p>
+</footer>
+
+<script src="/js/site-ui.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/explore-page.js"></script>
+</body>
+</html>

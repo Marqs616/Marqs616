@@ -1,0 +1,89 @@
+<svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="720" fill="#09090F"/>
+  <rect width="1600" height="720" fill="url(#sky)"/>
+  <circle cx="1140" cy="150" r="98" fill="url(#moon)" fill-opacity="0.95"/>
+  <circle cx="870" cy="190" r="176" fill="url(#planet)"/>
+  <circle cx="680" cy="392" r="38" fill="url(#smallPlanet)" fill-opacity="0.9"/>
+  <path d="M0 546L96 454L151 546L244 408L298 546L404 434L476 546L578 420L664 546L758 448L861 546L972 414L1063 546L1183 426L1290 546L1409 396L1600 546V720H0V546Z" fill="url(#rocks)"/>
+  <path d="M545 603C576 474 620 384 683 308C724 260 776 214 806 214C836 214 888 260 929 308C992 384 1036 474 1067 603H994C976 530 953 472 920 418C892 372 851 333 806 333C761 333 720 372 692 418C659 472 636 530 618 603H545Z" fill="url(#botCore)"/>
+  <path d="M748 186C748 151 774 126 806 126C838 126 864 151 864 186V239H748V186Z" fill="url(#botHead)"/>
+  <path d="M765 150C774 128 792 114 806 114C820 114 838 128 847 150" stroke="#F8DCFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M726 603C738 540 756 492 779 452H833C856 492 874 540 886 603H726Z" fill="url(#botTorso)"/>
+  <path d="M679 455L735 484L716 520L653 494L679 455Z" fill="url(#limb)"/>
+  <path d="M933 484L989 455L1015 494L952 520L933 484Z" fill="url(#limb)"/>
+  <path d="M694 533L739 555L718 665H666L694 533Z" fill="url(#leg)"/>
+  <path d="M918 555L963 533L991 665H939L918 555Z" fill="url(#leg)"/>
+  <path d="M666 665H736L758 700H626L666 665Z" fill="url(#foot)"/>
+  <path d="M876 665H946L986 700H854L876 665Z" fill="url(#foot)"/>
+  <path d="M770 191C770 173 786 158 806 158C826 158 842 173 842 191V216H770V191Z" fill="#230633"/>
+  <circle cx="790" cy="192" r="9" fill="#CF8BFF"/>
+  <circle cx="822" cy="192" r="9" fill="#CF8BFF"/>
+  <path d="M0 0L1600 0V720H0V0Z" fill="url(#vignette)"/>
+  <g opacity="0.85">
+    <circle cx="123" cy="104" r="2" fill="white"/>
+    <circle cx="218" cy="167" r="2.3" fill="white"/>
+    <circle cx="337" cy="97" r="1.8" fill="white"/>
+    <circle cx="512" cy="124" r="1.7" fill="white"/>
+    <circle cx="1159" cy="89" r="2" fill="white"/>
+    <circle cx="1268" cy="194" r="1.7" fill="white"/>
+    <circle cx="1366" cy="145" r="2.1" fill="white"/>
+    <circle cx="1460" cy="112" r="1.9" fill="white"/>
+    <circle cx="1498" cy="184" r="1.8" fill="white"/>
+    <circle cx="1060" cy="240" r="1.6" fill="white"/>
+  </g>
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42227A"/>
+      <stop offset="0.35" stop-color="#7D2C8F"/>
+      <stop offset="0.68" stop-color="#571D74"/>
+      <stop offset="1" stop-color="#170A23"/>
+    </linearGradient>
+    <radialGradient id="planet" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(870 190) rotate(90) scale(176)">
+      <stop stop-color="#F6B4FF"/>
+      <stop offset="0.45" stop-color="#A95FFF"/>
+      <stop offset="1" stop-color="#5A2484"/>
+    </radialGradient>
+    <radialGradient id="moon" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1140 150) rotate(90) scale(98)">
+      <stop stop-color="#FFE2F2"/>
+      <stop offset="1" stop-color="#E38CFF"/>
+    </radialGradient>
+    <radialGradient id="smallPlanet" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(680 392) rotate(90) scale(38)">
+      <stop stop-color="#E09DFF"/>
+      <stop offset="1" stop-color="#6A1DA5"/>
+    </radialGradient>
+    <linearGradient id="rocks" x1="800" y1="396" x2="800" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6C2A8E"/>
+      <stop offset="0.4" stop-color="#43175F"/>
+      <stop offset="1" stop-color="#120B1A"/>
+    </linearGradient>
+    <linearGradient id="botCore" x1="806" y1="214" x2="806" y2="603" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C88DFF"/>
+      <stop offset="0.5" stop-color="#7E35BE"/>
+      <stop offset="1" stop-color="#38114D"/>
+    </linearGradient>
+    <linearGradient id="botHead" x1="806" y1="126" x2="806" y2="239" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DAA8FF"/>
+      <stop offset="1" stop-color="#552173"/>
+    </linearGradient>
+    <linearGradient id="botTorso" x1="806" y1="452" x2="806" y2="603" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9E57D9"/>
+      <stop offset="1" stop-color="#351145"/>
+    </linearGradient>
+    <linearGradient id="limb" x1="834" y1="455" x2="834" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B77BF0"/>
+      <stop offset="1" stop-color="#4A1965"/>
+    </linearGradient>
+    <linearGradient id="leg" x1="829" y1="533" x2="829" y2="665" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A55EE1"/>
+      <stop offset="1" stop-color="#341046"/>
+    </linearGradient>
+    <linearGradient id="foot" x1="806" y1="665" x2="806" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C2CBD"/>
+      <stop offset="1" stop-color="#2B103B"/>
+    </linearGradient>
+    <linearGradient id="vignette" x1="800" y1="0" x2="800" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#000000" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.42"/>
+    </linearGradient>
+  </defs>
+</svg>

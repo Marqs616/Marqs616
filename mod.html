@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visualizar mod</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20260322c">
+</head>
+<body>
+<header class="navbar">
+<div class="nav-left">
+<h2 class="logo">DRXZ MODS</h2>
+<nav>
+<a href="/">Home</a>
+<a href="/explore.html">Explorar</a>
+<a href="/samp.html">GTA SA</a>
+<a href="/minecraft.html">Minecraft</a>
+<a href="/partnership.html">Parcerias</a>
+</nav>
+</div>
+
+<div class="nav-right" id="authArea">
+<a href="/login.html" class="btn">Entrar</a>
+</div>
+
+<div class="nav-user" id="userBar" style="display:none" onclick="toggleUserMenu(event)">
+<div class="user-trigger">
+<img id="userAvatar" class="user-avatar" alt="Avatar">
+<span id="userEmail"></span>
+</div>
+
+<div class="dropdown">
+<a data-own-profile-link href="/profile.html">Meu perfil</a>
+<a href="/post-mod.html">Postar mod</a>
+<a data-favorites-link href="/profile.html#favoritos">Favoritos</a>
+<a data-admin-link href="/admin.html" style="display:none">Painel admin</a>
+<a href="#" onclick="logout()">Sair</a>
+</div>
+</div>
+</header>
+
+<main>
+<section class="mod-page">
+<img id="modBanner" class="mod-banner" alt="Banner do mod">
+
+<div class="mod-info">
+<h1 id="modTitle">Carregando...</h1>
+<p id="modDescription"></p>
+
+<div class="mod-meta">
+<span id="modAuthor"></span>
+<span id="modDownloads"></span>
+<span id="modRating"></span>
+</div>
+
+<div class="mod-actions">
+<button id="favoriteBtn" onclick="favoriteMod()" class="ghost-btn favorite-toggle-btn" type="button">
+<span class="favorite-default-label">Favoritar</span>
+<span class="favorite-hover-label">Desfavoritar</span>
+</button>
+<a id="downloadBtn" class="btn">Baixar mod</a>
+</div>
+</div>
+</section>
+
+<section class="rating-section mod-feedback-panel">
+<div class="simple-section-head">
+<div>
+<h2 id="ratingHeading">Avaliacao</h2>
+<p class="muted">Deixe sua nota e ajude outros usuarios a entender se vale o download.</p>
+</div>
+</div>
+<div class="rating-controls">
+<div class="rating-summary-card" id="ratingSummaryCard">
+<div class="rating-summary-top">
+<strong id="ratingAverageValue">0.0</strong>
+<span id="ratingAverageLabel">Sem notas ainda</span>
+</div>
+<div class="rating-average-stars" id="ratingAverageStars" aria-hidden="true"></div>
+<div class="rating-summary-meta">
+<span id="ratingVoteCount">0 votos</span>
+<span id="myRatingStatus">Sua nota: ainda nao enviada</span>
+</div>
+</div>
+<div class="rating-picker" id="ratingPicker" aria-label="Escolha sua avaliacao"></div>
+</div>
+</section>
+
+<section class="comments-section mod-feedback-panel">
+<div class="simple-section-head">
+<div>
+<h2 id="commentsHeading">Comentarios</h2>
+<p class="muted">Converse com a galera sobre o mod com respostas, likes e dislike.</p>
+</div>
+</div>
+
+<div class="comment-composer youtube-composer">
+<div class="comment-composer-avatar-wrap">
+<img id="composerAvatar" class="comment-composer-avatar" alt="Seu avatar">
+</div>
+<div class="comment-composer-main">
+<div class="comment-composer-top">
+<strong id="composerName">Comente com sua conta</strong>
+<span id="replyingHint" class="muted" style="display:none"></span>
+</div>
+<textarea id="commentText" placeholder="Adicione um comentario..."></textarea>
+<div class="comment-composer-actions">
+<button id="cancelReplyBtn" class="ghost-btn" type="button" onclick="cancelReply()" style="display:none">Cancelar</button>
+<button onclick="sendComment()" class="btn" type="button">Comentar</button>
+</div>
+</div>
+</div>
+
+<div id="comments" class="comments-feed"></div>
+</section>
+</main>
+
+<script src="/js/site-ui.js?v=20260322c"></script>
+<script src="/js/auth.js?v=20260322c"></script>
+<script src="/js/mod-page.js?v=20260322c"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar conta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<section class="hero no-bg">
+<div class="hero-content">
+<h1>Criar conta</h1>
+<p>Monte seu perfil, acompanhe criadores, salve favoritos e solicite acesso para postar mods.</p>
+</div>
+</section>
+
+<div class="auth-box">
+<h2 class="page-title">Cadastro</h2>
+<form id="registerForm">
+<input type="text" id="username" placeholder="Usuario" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="password" id="password" placeholder="Senha" required>
+<button class="btn" type="submit">Criar conta</button>
+</form>
+<div class="mini-list" style="margin-top:18px">
+<a class="ghost-btn" href="/oauth/google">Cadastrar com Google</a>
+<a class="ghost-btn" href="/oauth/github">Cadastrar com GitHub</a>
+<a class="ghost-btn" href="/oauth/facebook">Cadastrar com Facebook</a>
+<a class="ghost-btn" href="/oauth/discord">Cadastrar com Discord</a>
+</div>
+<p class="muted">Ja tem conta? <a href="/login.html">Entrar</a></p>
+</div>
+
+<script src="/js/site-ui.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
