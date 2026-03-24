@@ -14,24 +14,29 @@ const PORT = Number(process.env.PORT) || 3000
 const MASTER_USERNAME = "drax"
 const OAUTH_HANDOFF_SECRET = process.env.OAUTH_HANDOFF_SECRET || "drxz-oauth-handoff-secret"
 const PUBLIC_BASE_URL = String(process.env.PUBLIC_BASE_URL || `http://localhost:${PORT}`).replace(/\/+$/, "")
-const sessionsFile = "sessions.json"
-const siteSettingsFile = "site-settings.json"
-const aiConversationsFile = "ai-conversations.json"
+const DATA_DIR = path.resolve(process.env.DATA_DIR || __dirname)
+const uploadsDir = path.resolve(process.env.UPLOADS_DIR || path.join(DATA_DIR, "uploads"))
+const sessionsFile = path.join(DATA_DIR, "sessions.json")
+const siteSettingsFile = path.join(DATA_DIR, "site-settings.json")
+const aiConversationsFile = path.join(DATA_DIR, "ai-conversations.json")
 const ACCOUNT_RECOVERY_WINDOW_MS = 1000 * 60 * 60
 
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const usersFile = "users.json"
-const modsFile = "mods.json"
-const commentsFile = "comments.json"
-const ratingsFile = "ratings.json"
-const favoritesFile = "favorites.json"
-const followsFile = "follows.json"
-const notificationsFile = "notifications.json"
-const partnerSectionsFile = "partner-sections.json"
-const partnerPostsFile = "partner-posts.json"
+const usersFile = path.join(DATA_DIR, "users.json")
+const modsFile = path.join(DATA_DIR, "mods.json")
+const commentsFile = path.join(DATA_DIR, "comments.json")
+const ratingsFile = path.join(DATA_DIR, "ratings.json")
+const favoritesFile = path.join(DATA_DIR, "favorites.json")
+const followsFile = path.join(DATA_DIR, "follows.json")
+const notificationsFile = path.join(DATA_DIR, "notifications.json")
+const partnerSectionsFile = path.join(DATA_DIR, "partner-sections.json")
+const partnerPostsFile = path.join(DATA_DIR, "partner-posts.json")
+
+ensureDir(DATA_DIR)
+ensureDir(uploadsDir)
 
 function loadEnvFile() {
 const envPath = path.join(__dirname, ".env")
@@ -68,6 +73,12 @@ value = value.slice(1, -1)
 
 process.env[key] = value
 })
+}
+
+function ensureDir(dirPath) {
+if (!fs.existsSync(dirPath)) {
+fs.mkdirSync(dirPath, { recursive: true })
+}
 }
 
 function readData(file) {
@@ -164,13 +175,18 @@ callback(null)
 
 const sessionStore = new JsonSessionStore(sessionsFile)
 
+app.set("trust proxy", 1)
+
 app.use(session({
 secret: "drxz-mods-secret",
 resave: false,
 saveUninitialized: false,
 store: sessionStore,
 cookie: {
-maxAge: 1000 * 60 * 60 * 24 * 30
+maxAge: 1000 * 60 * 60 * 24 * 30,
+httpOnly: true,
+sameSite: "lax",
+secure: process.env.NODE_ENV === "production"
 }
 }))
 
@@ -1361,7 +1377,7 @@ message: siteSettings.maintenanceMessage
 })
 
 app.use(express.static(__dirname))
-app.use("/uploads", express.static(path.join(__dirname, "uploads")))
+app.use("/uploads", express.static(uploadsDir))
 
 function enrichComment(comment, viewer) {
 const author = getUserById(comment.userId)
@@ -1474,7 +1490,7 @@ next()
 
 const storage = multer.diskStorage({
 destination: (req, file, cb) => {
-cb(null, "uploads/")
+cb(null, uploadsDir)
 },
 filename: (req, file, cb) => {
 cb(null, `${Date.now()}-${Math.round(Math.random() * 1e6)}${path.extname(file.originalname)}`)
@@ -1565,6 +1581,19 @@ const accountHasSecuritySeed = Boolean(security.registeredIp || security.trusted
 const securityBypassActive = hasActiveSecurityBypass(user)
 
 if (accountHasSecuritySeed && !securityBypassActive && !hasTrustedLoginAccess(user, clientIp, safeDeviceToken)) {
+	if (isMasterAdmin(user)) {
+		seedTrustedLoginAccess(user, clientIp, safeDeviceToken)
+		rememberSuccessfulLogin(user, clientIp, safeDeviceToken)
+		writeData(usersFile, users)
+		req.session.userId = user.id
+		return req.session.save(() => {
+			res.json({
+				message: "Login realizado",
+				user: sanitizeUser(user, user)
+			})
+		})
+	}
+
 	const masterIds = users.filter(candidate => candidate.role === "master_admin" && !candidate.banned).map(candidate => candidate.id)
 
 	createNotificationForUsers(masterIds, {
@@ -1590,10 +1619,11 @@ rememberSuccessfulLogin(user, clientIp, safeDeviceToken)
 writeData(usersFile, users)
 
 req.session.userId = user.id
-
-res.json({
-message: "Login realizado",
-user: sanitizeUser(user, user)
+req.session.save(() => {
+	res.json({
+	message: "Login realizado",
+	user: sanitizeUser(user, user)
+	})
 })
 })
 

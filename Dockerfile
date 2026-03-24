@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:20-bookworm-slim
 
 WORKDIR /app
 
@@ -7,11 +7,12 @@ RUN npm ci --omit=dev
 
 COPY . .
 
-RUN mkdir -p /app/uploads \
-    && chmod -R 775 /app/uploads
+RUN mkdir -p /app/data/uploads \
+    && chmod -R 775 /app
 
 ENV NODE_ENV=production
 ENV PORT=3000
+ENV DATA_DIR=/app/data
 
 EXPOSE 3000
 
