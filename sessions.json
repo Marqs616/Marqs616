@@ -44,12 +44,14 @@
     },
     "userId": 1
   },
-  "oa4yw_H1P4ESszQ4mQ3ochW3d188sop4": {
+  "Dn5LclmP_dvVqLZ-Xf07vGKyzGa05pDg": {
     "cookie": {
-      "originalMaxAge": 2591999994,
-      "expires": "2026-04-23T01:30:48.757Z",
+      "originalMaxAge": 2591999999,
+      "expires": "2026-04-24T04:10:34.220Z",
+      "secure": false,
       "httpOnly": true,
-      "path": "/"
+      "path": "/",
+      "sameSite": "lax"
     },
     "userId": 1
   }

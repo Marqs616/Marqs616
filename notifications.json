@@ -1,5 +1,49 @@
 [
   {
+    "id": 110,
+    "userId": 4,
+    "actorId": null,
+    "type": "site-news",
+    "title": "Area de postagem aberta",
+    "message": "Se sua conta tiver permissao para postar, a tela dedicada de envio esta pronta para mandar seu proximo mod.",
+    "link": "/post-mod.html",
+    "read": false,
+    "date": "2026-03-25T03:52:43.098Z"
+  },
+  {
+    "id": 109,
+    "userId": 3,
+    "actorId": null,
+    "type": "site-news",
+    "title": "Area de postagem aberta",
+    "message": "Se sua conta tiver permissao para postar, a tela dedicada de envio esta pronta para mandar seu proximo mod.",
+    "link": "/post-mod.html",
+    "read": false,
+    "date": "2026-03-25T03:52:43.098Z"
+  },
+  {
+    "id": 108,
+    "userId": 2,
+    "actorId": null,
+    "type": "site-news",
+    "title": "Area de postagem aberta",
+    "message": "Se sua conta tiver permissao para postar, a tela dedicada de envio esta pronta para mandar seu proximo mod.",
+    "link": "/post-mod.html",
+    "read": false,
+    "date": "2026-03-25T03:52:43.097Z"
+  },
+  {
+    "id": 107,
+    "userId": 1,
+    "actorId": null,
+    "type": "site-news",
+    "title": "Area de postagem aberta",
+    "message": "Se sua conta tiver permissao para postar, a tela dedicada de envio esta pronta para mandar seu proximo mod.",
+    "link": "/post-mod.html",
+    "read": true,
+    "date": "2026-03-25T03:52:43.094Z"
+  },
+  {
     "id": 106,
     "userId": 4,
     "actorId": null,

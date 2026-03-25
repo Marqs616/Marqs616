@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login - DRXZ MODS</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20260325auth1">
 </head>
-<body>
-
-<div class="bg-effects"></div>
-
-<header class="hero">
-<div class="hero-content">
-<h1>DRXZ MODS</h1>
-<p>Entrar na conta</p>
+<body class="auth-page auth-page-login">
+<main class="auth-shell-clean">
+<section class="auth-side-clean">
+<a href="/" class="auth-brand-clean">DRXZ MODS</a>
+<span class="auth-kicker-clean">Entrar na conta</span>
+<h1>Acesse seu painel sem enrolacao</h1>
+<p>Entre para acompanhar mods, favoritos, perfil, comentarios e tudo o que voce faz dentro da comunidade.</p>
+<div class="auth-side-points">
+<div class="auth-point">Visual limpo e direto</div>
+<div class="auth-point">Favoritos, perfil e notificacoes num so lugar</div>
+<div class="auth-point">Protecao de conta com validacao de dispositivo</div>
 </div>
-</header>
+</section>
 
-<div class="page-container">
+<section class="auth-card-clean">
+<div class="auth-card-head">
+<span class="auth-card-kicker">Login</span>
+<h2>Bem-vindo de volta</h2>
+<p class="muted">Use seu usuario e senha para continuar no DRXZ MODS.</p>
+</div>
 
-<div class="auth-box">
+<form id="loginForm" class="auth-form-clean">
+<label class="auth-field-clean">
+<span>Usuario</span>
+<input type="text" id="username" placeholder="Seu usuario" required>
+</label>
 
-<h2 class="page-title">Entrar</h2>
-
-<form id="loginForm">
-
-<input type="text" id="username" placeholder="Usuário" required>
-
-<input type="password" id="password" placeholder="Senha" required>
+<label class="auth-field-clean">
+<span>Senha</span>
+<input type="password" id="password" placeholder="Sua senha" required>
+</label>
 
 <button type="submit" class="btn">Entrar</button>
-
 </form>
 
-<p style="margin-top:15px">
-Não tem conta?
-<a href="register.html">Criar conta</a>
-</p>
-
+<div class="auth-links-clean">
+<a href="/forgot-password.html" class="ghost-btn">Esqueci minha senha</a>
+<a href="/register.html" class="ghost-btn">Criar conta</a>
 </div>
+</section>
+</main>
 
-</div>
-
-<script src="js/auth.js"></script>
-
+<script src="/js/site-ui.js?v=20260325auth1"></script>
+<script src="/js/auth.js?v=20260325auth1"></script>
 </body>
 </html>

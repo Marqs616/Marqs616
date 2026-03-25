@@ -37,6 +37,7 @@ const partnerPostsFile = path.join(DATA_DIR, "partner-posts.json")
 
 ensureDir(DATA_DIR)
 ensureDir(uploadsDir)
+bootstrapPersistentData()
 
 function loadEnvFile() {
 const envPath = path.join(__dirname, ".env")
@@ -78,6 +79,69 @@ process.env[key] = value
 function ensureDir(dirPath) {
 if (!fs.existsSync(dirPath)) {
 fs.mkdirSync(dirPath, { recursive: true })
+}
+}
+
+function copyFileIfMissing(source, target) {
+if (!fs.existsSync(source) || fs.existsSync(target)) {
+return
+}
+
+ensureDir(path.dirname(target))
+fs.copyFileSync(source, target)
+}
+
+function copyDirectoryContentsIfMissing(sourceDir, targetDir) {
+if (!fs.existsSync(sourceDir)) {
+return
+}
+
+ensureDir(targetDir)
+
+const items = fs.readdirSync(sourceDir, { withFileTypes: true })
+items.forEach(item => {
+const sourcePath = path.join(sourceDir, item.name)
+const targetPath = path.join(targetDir, item.name)
+
+if (item.isDirectory()) {
+copyDirectoryContentsIfMissing(sourcePath, targetPath)
+return
+}
+
+if (!fs.existsSync(targetPath)) {
+fs.copyFileSync(sourcePath, targetPath)
+}
+})
+}
+
+function bootstrapPersistentData() {
+const legacyRootFiles = [
+["users.json", usersFile],
+["mods.json", modsFile],
+["comments.json", commentsFile],
+["ratings.json", ratingsFile],
+["favorites.json", favoritesFile],
+["follows.json", followsFile],
+["notifications.json", notificationsFile],
+["partner-sections.json", partnerSectionsFile],
+["partner-posts.json", partnerPostsFile],
+["sessions.json", sessionsFile],
+["site-settings.json", siteSettingsFile],
+["ai-conversations.json", aiConversationsFile]
+]
+
+legacyRootFiles.forEach(([legacyName, targetPath]) => {
+const legacyPath = path.join(__dirname, legacyName)
+if (path.resolve(targetPath) === path.resolve(legacyPath)) {
+return
+}
+
+copyFileIfMissing(legacyPath, targetPath)
+})
+
+const legacyUploadsDir = path.join(__dirname, "uploads")
+if (path.resolve(uploadsDir) !== path.resolve(legacyUploadsDir)) {
+copyDirectoryContentsIfMissing(legacyUploadsDir, uploadsDir)
 }
 }
 

@@ -7,34 +7,60 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=20260325auth1">
 </head>
-<body>
-<section class="hero no-bg">
-<div class="hero-content">
-<h1>Criar conta</h1>
-<p>Monte seu perfil, acompanhe criadores, salve favoritos e solicite acesso para postar mods.</p>
+<body class="auth-page auth-page-register">
+<main class="auth-shell-clean">
+<section class="auth-side-clean">
+<a href="/" class="auth-brand-clean">DRXZ MODS</a>
+<span class="auth-kicker-clean">Criar conta</span>
+<h1>Entre na comunidade do jeito certo</h1>
+<p>Monte seu perfil, acompanhe criadores, salve favoritos e prepare sua conta para crescer dentro do site.</p>
+<div class="auth-side-points">
+<div class="auth-point">Cadastro direto e sem poluicao visual</div>
+<div class="auth-point">Login social opcional</div>
+<div class="auth-point">Conta pronta para mods, perfil e comunidade</div>
 </div>
 </section>
 
-<div class="auth-box">
-<h2 class="page-title">Cadastro</h2>
-<form id="registerForm">
-<input type="text" id="username" placeholder="Usuario" required>
-<input type="email" id="email" placeholder="Email" required>
-<input type="password" id="password" placeholder="Senha" required>
-<button class="btn" type="submit">Criar conta</button>
-</form>
-<div class="mini-list" style="margin-top:18px">
-<a class="ghost-btn" href="/oauth/google">Cadastrar com Google</a>
-<a class="ghost-btn" href="/oauth/github">Cadastrar com GitHub</a>
-<a class="ghost-btn" href="/oauth/facebook">Cadastrar com Facebook</a>
-<a class="ghost-btn" href="/oauth/discord">Cadastrar com Discord</a>
-</div>
-<p class="muted">Ja tem conta? <a href="/login.html">Entrar</a></p>
+<section class="auth-card-clean">
+<div class="auth-card-head">
+<span class="auth-card-kicker">Cadastro</span>
+<h2>Crie sua conta</h2>
+<p class="muted">Escolha um usuario, email e senha para entrar no DRXZ MODS.</p>
 </div>
 
-<script src="/js/site-ui.js"></script>
-<script src="/js/auth.js"></script>
+<form id="registerForm" class="auth-form-clean">
+<label class="auth-field-clean">
+<span>Usuario</span>
+<input type="text" id="username" placeholder="Seu usuario" required>
+</label>
+
+<label class="auth-field-clean">
+<span>Email</span>
+<input type="email" id="email" placeholder="Seu email" required>
+</label>
+
+<label class="auth-field-clean">
+<span>Senha</span>
+<input type="password" id="password" placeholder="Crie uma senha" required>
+</label>
+
+<button class="btn" type="submit">Criar conta</button>
+</form>
+
+<div class="auth-links-clean auth-links-grid">
+<a class="ghost-btn" href="/oauth/google">Google</a>
+<a class="ghost-btn" href="/oauth/github">GitHub</a>
+<a class="ghost-btn" href="/oauth/facebook">Facebook</a>
+<a class="ghost-btn" href="/oauth/discord">Discord</a>
+</div>
+
+<p class="muted auth-foot-copy">Ja tem conta? <a href="/login.html">Entrar</a></p>
+</section>
+</main>
+
+<script src="/js/site-ui.js?v=20260325auth1"></script>
+<script src="/js/auth.js?v=20260325auth1"></script>
 </body>
 </html>
